@@ -1,0 +1,10 @@
+groupby() command helps to group columns of interest in a dataset. we can then further perform different operations on those selected columns.
+value_count() is another function of python that lets the user count how many times the unique values appeared.
+we can use groupby() instead as well e.g.,
+dF.country.valuecount() # count the number of times each unique country appeared in the 'country' column of dataframe dF.
+dF.groupby('country').country.count() # groupby() created and sorted the dataframe according to same country. 
+                                      # Then we picked the country column and counted how many times each country has appeard by count() command.
+groupby() can be used in number of ways to shuffle the data or to sort out our desired data, say we have a dataframe dF that lists the price of 
+a products by different companies, its ISBN # and other related information about the products. we need to groupby() according to indivitual product 
+and check its lowest price available.
+we can use the following command: dF.groupby('product').price.min()
