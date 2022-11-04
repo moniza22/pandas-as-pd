@@ -22,3 +22,4 @@ dF.groupby('country','province').apply(lambda dF: dF.loc[dF.points.idxmax()])
 Another groupby() method worth mentioning is agg(), which lets you run a bunch of different functions on your DataFrame simultaneously 
 The .agg() method returns multiple results unlike the .apply() method e.g.,
 dF.groupby('country').price.agg([len,min,max])
+Both .agg() and .apply() returns a dataframe not a series
