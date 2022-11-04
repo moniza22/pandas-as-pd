@@ -8,3 +8,17 @@ groupby() can be used in number of ways to shuffle the data or to sort out our d
 a products by different companies, its ISBN # and other related information about the products. we need to groupby() according to indivitual product 
 and check its lowest price available.
 we can use the following command: dF.groupby('product').price.min()
+A lambda function is a small anonymous function.
+A lambda function can take any number of arguments, but can only have one expression.
+lambda arguments : expression
+x = lambda a : a + 10
+print(x(5))
+x = lambda a, b : a * b
+print(x(5, 6))
+DataFrame is accessible to us directly using the apply() method, and we can then manipulate the data
+dF.groupby('country').apply(lambda dF: dF.title.iloc[0])
+we can groupby 2 or more columns as well , e.g.,
+dF.groupby('country','province').apply(lambda dF: dF.loc[dF.points.idxmax()])
+Another groupby() method worth mentioning is agg(), which lets you run a bunch of different functions on your DataFrame simultaneously 
+The .agg() method returns multiple results unlike the .apply() method e.g.,
+dF.groupby('country').price.agg([len,min,max])
