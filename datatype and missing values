@@ -1,0 +1,10 @@
+dF.values.dtype  #this command will let us know the data type of column values in the dataframe dF
+dF.dtype #this commands tells us the datatype of whole dataframe column by column
+to change the datatype we use .astype() method
+dF.values.astype('float')
+Not a Number (NaN)values can be detected by command pd.isnull() e.g., 
+dF[pd.isnull(dF.country)] # returns a dataframe that only has NaN values in country column
+to replace missing values we use .fillna() method e.g., dF.values.fillna('uncertain')
+to replace other values we use .replace() method e.g., dF.values.replace('ix',9)
+we could fill each missing value with the first non-null value that appears sometime after the given record in the database. 
+This is known as the backfill strategy.
