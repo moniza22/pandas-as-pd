@@ -23,3 +23,9 @@ Another groupby() method worth mentioning is agg(), which lets you run a bunch o
 The .agg() method returns multiple results unlike the .apply() method e.g.,
 dF.groupby('country').price.agg([len,min,max])
 Both .agg() and .apply() returns a dataframe not a series
+when we are using groupby function, most often the dataframe returned has multiple indices depending on our selection of the columns in groupby.
+A multi-index differs from a regular index in that it has multiple levels. For example:
+new=dF.groupby('country','province').title.agg([len]) returns 2 levelled indices country and province		and 1 column which is 'len'
+to reset back to single index(1,2,3.........) we use reset_index() methodi.e, new.reset_index() 
+to sort the values we use command .sort_values(by=[],ascending=True)
+to sort by index use .sort_index() which returns the dataframe sorted by index 1,2,3,4.... format.
